@@ -1,7 +1,8 @@
+disable_mlock = true
 ui = true
 
-api_addr     = "https://10.2.0.2:8200"
-cluster_addr = "https://10.2.0.2:8201"
+api_addr     = "https://<YOUR_VM_IP>:8200"
+cluster_addr = "https://<YOUR_VM_IP>:8201"
 
 storage "raft" {
   path    = "/opt/vault/data"
@@ -17,7 +18,7 @@ listener "tcp" {
 }
 
 seal "gcpckms" {
-  project     = "gcp-scratch-setup"
+  project     = "<you're-project"
   region      = "global"
   key_ring    = "vault-keyring"
   crypto_key  = "vault-key"
